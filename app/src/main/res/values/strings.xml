@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Remembering</string>
+    <string name="title_home">Home</string>
+    <string name="title_album">앨범</string>
+    <string name="title_posts">게시판</string>
+    <string name="title_test">영상테스트</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_photo">사진</string>
+    <string name="menu_video">동영상</string>
+    <string name="menu_post">게시판</string>
+
+    <string name="baseUrl">"http://remembering.website/"</string>
+</resources>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="kr.co.felici.remembering.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_album"
+        android:name="kr.co.felici.remembering.ui.dashboard.AlbumPhotoFragment"
+        android:label="@string/title_album"
+        tools:layout="@layout/fragment_albumphoto" />
+
+    <fragment
+        android:id="@+id/navigation_posts"
+        android:name="kr.co.felici.remembering.ui.dashboard.AlbumVideoFragment"
+        android:label="@string/title_posts"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_test"
+        android:name="kr.co.felici.remembering.ui.dashboard.TestVideoFragment"
+        android:label="@string/title_test"
+        tools:layout="@layout/fragment_testvideo" />
+</navigation>
