@@ -61,12 +61,7 @@ class TestVideoFragment : Fragment() {
 
         val root: View = binding.root
 
-        testVideoRecyclerView =
-            binding.testvideoFragmentRecyclerview
-        AppConstants.println("테스트비디오리사이클러뷰: " + testVideoRecyclerView)
-
-        testVideoRecyclerView.layoutManager = LinearLayoutManager(requireContext())
-
+        initRecyclerView(binding)
 
         // 서버에서 불러오기
 //        getTestVideoList()
@@ -82,11 +77,11 @@ class TestVideoFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         AppConstants.println("TestVideoFragment -------------------- onViewCreated")
 
-        testVideoRecyclerView.layoutManager = LinearLayoutManager(requireContext())
-        testVideoAdapter = TestVideoAdapter(testVideoList)
-        testVideoRecyclerView.adapter = testVideoAdapter
-
-        testVideoAdapter.notifyDataSetChanged()
+//        testVideoRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+//        testVideoAdapter = TestVideoAdapter(testVideoList)
+//        testVideoRecyclerView.adapter = testVideoAdapter
+//
+//        testVideoAdapter.notifyDataSetChanged()
     }
 
     override fun onStart() {
@@ -139,14 +134,18 @@ class TestVideoFragment : Fragment() {
 
     }
 
+    private fun initRecyclerView(binding: FragmentTestvideoBinding) {
 
-    private fun setRecycler() {
-
-        testVideoRecyclerView.layoutManager = LinearLayoutManager(requireContext())
-//        albumVideoAdapter = AlbumVideoAdapter(albumVideoList)
         testVideoAdapter = TestVideoAdapter(testVideoList)
-        testVideoRecyclerView.adapter = testVideoAdapter
 
+        testVideoRecyclerView = binding.testvideoFragmentRecyclerview
+
+        testVideoRecyclerView.apply {
+            adapter = testVideoAdapter
+            layoutManager = LinearLayoutManager(requireContext())
+        }
+
+        AppConstants.println("initRecyclerView() - 테스트비디오리사이클러뷰: " + testVideoRecyclerView)
 
     }
 
